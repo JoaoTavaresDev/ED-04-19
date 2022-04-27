@@ -191,19 +191,35 @@ int main(int argc, char** argv)
 	
 	for(int i=0; i<5; i++)
 	{
-		cout<<"Digite o email do " + to_string(i+1) + "° contato: ";
+		cout<<"Digite o email do " + to_string(i+1) + "Â° contato: ";
 		cin>>email;
-		cout<<"Digite o nome do " + to_string(i+1) + "° contato: ";
+		cout<<"Digite o nome do " + to_string(i+1) + "Â° contato: ";
 		cin>>nome;
-		cout<<"Digite o telefone do " + to_string(i+1) + "° contato: ";
+		cout<<"Digite o telefone do " + to_string(i+1) + "Â° contato: ";
 		cin>>telefone;
-		cout<<"Digite o dia de nacimento do " + to_string(i+1) + "° contato: ";
+		cout<<"Digite o dia de nacimento do " + to_string(i+1) + "Â° contato: ";
 		cin>>dia;
-		cout<<"Digite o mes de nacimento do " + to_string(i+1) + "° contato: ";
+		cout<<"Digite o mes de nacimento do " + to_string(i+1) + "Â° contato: ";
 		cin>>mes;
-		cout<<"Digite o ano de nacimento do " + to_string(i+1) + "° contato: ";
+		cout<<"Digite o ano de nacimento do " + to_string(i+1) + "Â° contato: ";
 		cin>>ano;
+		
+		Data *dataNascimento = new Data();
+		dataNascimento->setDia(dia);
+		dataNascimento->setMes(mes);
+		dataNascimento->setAno(ano);
+		
+        	contatos[i]= new Contato();
+		contatos[i]->setEmail(email);
+		contatos[i]->setNome(nome);
+		contatos[i]->setTelefone(telefone);
+		contatos[i]->setDtnasc(dataNascimento);
 	}
+	
+	for(int i=0; i<5; i++){
+	    cout << contatos[i]->getContato() << endl;
+	}
+	
 	
 	Data *dataNascimento = new Data(27, 5, 2003);
 	cout << dataNascimento->getData() << endl;
